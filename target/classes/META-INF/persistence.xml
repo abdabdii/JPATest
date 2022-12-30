@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence version="2.2" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/persistence">
+    <persistence-unit transaction-type="RESOURCE_LOCAL" name="company-persistence-unit">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>org.example.models.Employee</class>
+    <class>org.example.models.Address</class>
+    <class>org.example.models.Department</class>
+    <class>org.example.models.Group</class>
+    <properties>
+
+    <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+    <property name="jakarta.persistence.schema-generation.scripts.action" value="drop-and-create"/>
+    <property name="jakarta.persistence.schema-generation.scripts.create-target" value="module01-create.ddl"/>
+    <property name="jakarta.persistence.schema-generation.scripts.drop-target" value="module01-drop.ddl"/>
+    <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver"/>
+    <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:~/companyDB"/>
+    <property name="eclipselink.logging.level" value="INFO"/>
+</properties>
+
+</persistence-unit>
+
+</persistence>
